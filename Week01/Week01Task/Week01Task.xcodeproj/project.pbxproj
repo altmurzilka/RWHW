@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F1326E562482659100D1B6F7 /* Week01Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week01Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1326E562482659100D1B6F7 /* Week01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Week01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1326E592482659100D1B6F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1326E5B2482659100D1B6F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F1326E5D2482659100D1B6F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		F1326E572482659100D1B6F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1326E562482659100D1B6F7 /* Week01Task.app */,
+				F1326E562482659100D1B6F7 /* Week01.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,7 +84,7 @@
 			);
 			name = Week01Task;
 			productName = Week01Task;
-			productReference = F1326E562482659100D1B6F7 /* Week01Task.app */;
+			productReference = F1326E562482659100D1B6F7 /* Week01.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.myrzaboi.Week01Task;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Week01;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -310,7 +310,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.myrzaboi.Week01Task;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Week01;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
