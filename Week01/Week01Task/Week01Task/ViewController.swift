@@ -9,25 +9,31 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var RedSlider: UISlider!
+    @IBOutlet weak var GreenSlider: UISlider!
+    @IBOutlet weak var BlueSlider: UISlider!
+    
+    @IBOutlet weak var RedLabel: UILabel!
+    @IBOutlet weak var GreenLabel: UILabel!
+    @IBOutlet weak var BlueLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    @IBAction func showAlert() {
-        
-        let alert = UIAlertController(title: "Name your color", message: nil, preferredStyle: .alert)
-        alert.addTextField()
-        
-        let action = UIAlertAction(title: "Submit", style: .default) { [unowned alert] _ in
-            let answer = alert.textFields![0]
-            // do something interesting with "answer" here
-        }
-        alert.addAction(action)
 
-        present(alert, animated: true)
+    @IBAction func RedValueChange(_ sender: Any) {
+        RedLabel.text = "\(RedSlider.value)"
     }
-
-
+    
+    @IBAction func GreenValueChange(_ sender: Any) {
+        GreenLabel.text = "\(GreenSlider.value)"
+    }
+    
+    @IBAction func BlueValueChange(_ sender: Any) {
+        BlueLabel.text = "\(BlueSlider.value)"
+    }
+    
 }
 
