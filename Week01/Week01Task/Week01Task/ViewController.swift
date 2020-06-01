@@ -26,26 +26,25 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var setColorButton: UIButton!
     
+    @IBOutlet weak var resetButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func RedValueChange(_ sender: UISlider) {
-        let roundedValue = RedSlider.value.rounded()
-        currentValueRed = Int(roundedValue)
-        RedLabel.text = "\(currentValueRed)"
+        RedLabel.text = "\(RedSlider.value.rounded())"
+        currentValueRed = Int(RedSlider.value.rounded())
     }
     
     @IBAction func GreenValueChange(_ sender: UISlider) {
-        let roundedValue = GreenSlider.value.rounded()
-        currentValueGreen = Int(roundedValue)
-        GreenLabel.text = "\(currentValueGreen)"
+        GreenLabel.text = "\(GreenSlider.value.rounded())"
+        currentValueGreen = Int(GreenSlider.value.rounded())
     }
     
     @IBAction func BlueValueChange(_ sender: UISlider) {
-        let roundedValue = BlueSlider.value.rounded()
-        currentValueBlue = Int(roundedValue)
-        BlueLabel.text = "\(currentValueBlue)"
+        BlueLabel.text = "\(BlueSlider.value.rounded())"
+        currentValueBlue = Int(BlueSlider.value.rounded())
     }
     
     @IBAction func setColor(_ sender: UIButton) {
@@ -79,11 +78,30 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: CGFloat(self.RedSlider.value.rounded()/255.0), green: CGFloat(self.GreenSlider.value.rounded()/255), blue: CGFloat(self.BlueSlider.value.rounded()/255), alpha: 1)
     }
     
-    @IBAction func Reset() {
+    
+    @IBAction func resetEntered(_ sender: UIButton) {
+        Reset()
+    }
+    
+    func Reset() {
+        
+        currentValueRed = 0
+        currentValueGreen = 0
+        currentValueBlue = 0
+        
+        updateLabels()
+        
+        //view.backgroundColor = UIColor.white
+    }
+    
+    func updateLabels() {
+        
+        RedLabel.text = String(0)
+        GreenLabel.text = String(0)
+        BlueLabel.text = String(0)
+        
         ColorName.text = "Custom color name"
-        RedSlider.value = 0
-        GreenSlider.value = 0
-        BlueSlider.value = 0
-       // self.view.backgroundColor = UIColor(red: CGFloat(self.RedSlider.value/255.0), green: CGFloat(self.GreenSlider.value/255), blue: CGFloat(self.BlueSlider.value/255), alpha: 1)
+        
+        //view.backgroundColor = UIColor.white
     }
 }
