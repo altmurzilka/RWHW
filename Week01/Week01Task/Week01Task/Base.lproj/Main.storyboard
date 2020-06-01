@@ -65,21 +65,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9i-Kb-D9D">
-                                <rect key="frame" x="609" y="85" width="42" height="21"/>
+                                <rect key="frame" x="609" y="85" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUp-B1-4WF">
-                                <rect key="frame" x="606" y="158" width="31" height="21"/>
+                                <rect key="frame" x="606" y="158" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="255" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ny-97-1p5">
-                                <rect key="frame" x="612" y="236" width="31" height="21"/>
+                                <rect key="frame" x="612" y="236" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -89,6 +89,9 @@
                                 <rect key="frame" x="416" y="306" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set Color"/>
+                                <connections>
+                                    <action selector="setColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HE6-eU-b0l"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdW-Kd-jwc">
                                 <rect key="frame" x="811" y="20" width="25" height="24"/>
@@ -106,10 +109,12 @@
                     <connections>
                         <outlet property="BlueLabel" destination="4ny-97-1p5" id="NMz-lO-LyV"/>
                         <outlet property="BlueSlider" destination="4zT-Mz-dIF" id="OVx-18-UOb"/>
+                        <outlet property="ColorName" destination="Ywl-Kp-g5d" id="6fq-6y-sW1"/>
                         <outlet property="GreenLabel" destination="DUp-B1-4WF" id="FBZ-ys-HSu"/>
                         <outlet property="GreenSlider" destination="zBS-GJ-CO4" id="Kfk-hd-vVg"/>
                         <outlet property="RedLabel" destination="G9i-Kb-D9D" id="J8x-Ql-As8"/>
                         <outlet property="RedSlider" destination="wut-T8-9Zk" id="5FY-rb-Dbs"/>
+                        <outlet property="setColorButton" destination="lJn-fk-VVu" id="opG-OW-hPc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

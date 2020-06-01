@@ -18,22 +18,50 @@ class ViewController: UIViewController {
     @IBOutlet weak var GreenLabel: UILabel!
     @IBOutlet weak var BlueLabel: UILabel!
     
+    @IBOutlet weak var ColorName: UILabel!
+    
+    @IBOutlet weak var setColorButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func RedValueChange(_ sender: Any) {
-        RedLabel.text = "\(RedSlider.value)"
+    
+    @IBAction func RedValueChange(_ sender: UISlider) {
+        RedLabel.text = "\(RedSlider.value.rounded())"
     }
     
-    @IBAction func GreenValueChange(_ sender: Any) {
-        GreenLabel.text = "\(GreenSlider.value)"
+    @IBAction func GreenValueChange(_ sender: UISlider) {
+        GreenLabel.text = "\(GreenSlider.value.rounded())"
     }
     
-    @IBAction func BlueValueChange(_ sender: Any) {
-        BlueLabel.text = "\(BlueSlider.value)"
+    @IBAction func BlueValueChange(_ sender: UISlider) {
+        BlueLabel.text = "\(BlueSlider.value.rounded())"
     }
     
+    @IBAction func setColor(_ sender: UIButton) {
+        
+        var txtColor: UITextField?
+        
+        let alert = UIAlertController(title: "Color", message: "Please set the color name", preferredStyle: .alert)
+        
+        let setAction = UIAlertAction(title: "Set", style: .default) { (i) in
+            if let clr = txtColor?.text {
+                self.ColorName.text = "\(clr)"
+                print("color name is: \(clr)")
+            } else {
+                print("No color")
+            }
+        }
+        
+        alert.addTextField { (i) in
+            txtColor = i
+            txtColor?.placeholder = "Enter your color"
+        }
+        
+        alert.addAction(setAction)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
-
