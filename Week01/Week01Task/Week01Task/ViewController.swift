@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         
         var txtColor: UITextField?
         
-        let alert = UIAlertController(title: "Color", message: "Please set the color name", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Color", message: "Set color name", preferredStyle: .alert)
         
         let setAction = UIAlertAction(title: "Set", style: .default) { (i) in
             if let clr = txtColor?.text {
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         
         alert.addTextField { (i) in
             txtColor = i
-            txtColor?.placeholder = "Enter your color"
+            txtColor?.placeholder = "Name your color"
         }
         
         alert.addAction(setAction)
@@ -76,10 +76,14 @@ class ViewController: UIViewController {
     }
     
     func ChangeColor() {
-         self.view.backgroundColor = UIColor(red: CGFloat(self.RedSlider.value.rounded()/255.0), green: CGFloat(self.GreenSlider.value.rounded()/255), blue: CGFloat(self.BlueSlider.value.rounded()/255), alpha: 1)
+        self.view.backgroundColor = UIColor(red: CGFloat(self.RedSlider.value.rounded()/255.0), green: CGFloat(self.GreenSlider.value.rounded()/255), blue: CGFloat(self.BlueSlider.value.rounded()/255), alpha: 1)
     }
     
-    func Reset() {
-        
+    @IBAction func Reset() {
+        ColorName.text = "Custom color name"
+        RedSlider.value = 0
+        GreenSlider.value = 0
+        BlueSlider.value = 0
+       // self.view.backgroundColor = UIColor(red: CGFloat(self.RedSlider.value/255.0), green: CGFloat(self.GreenSlider.value/255), blue: CGFloat(self.BlueSlider.value/255), alpha: 1)
     }
 }

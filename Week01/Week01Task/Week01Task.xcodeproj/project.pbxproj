@@ -13,7 +13,9 @@
 		F1326E612482659100D1B6F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1326E5F2482659100D1B6F7 /* Main.storyboard */; };
 		F1326E632482659400D1B6F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1326E622482659400D1B6F7 /* Assets.xcassets */; };
 		F1326E662482659400D1B6F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1326E642482659400D1B6F7 /* LaunchScreen.storyboard */; };
-		F1D5CD85248592B30096A049 /* AboutRGBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D5CD84248592B30096A049 /* AboutRGBViewController.swift */; };
+		F1D5CD872485A8760096A049 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D5CD862485A8760096A049 /* AboutViewController.swift */; };
+		F1D5CD892485AC840096A049 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = F1D5CD882485AC840096A049 /* BullsEye.html */; };
+		F1D5CD8B2485ACE20096A049 /* Data.html in Resources */ = {isa = PBXBuildFile; fileRef = F1D5CD8A2485ACE20096A049 /* Data.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		F1326E622482659400D1B6F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1326E652482659400D1B6F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1326E672482659400D1B6F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1D5CD84248592B30096A049 /* AboutRGBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRGBViewController.swift; sourceTree = "<group>"; };
+		F1D5CD862485A8760096A049 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = SOURCE_ROOT; };
+		F1D5CD882485AC840096A049 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = BullsEye.html; path = ../../../../../Desktop/BullsEye.html; sourceTree = "<group>"; };
+		F1D5CD8A2485ACE20096A049 /* Data.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Data.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +62,15 @@
 		F1326E582482659100D1B6F7 /* Week01Task */ = {
 			isa = PBXGroup;
 			children = (
+				F1D5CD862485A8760096A049 /* AboutViewController.swift */,
 				F1326E592482659100D1B6F7 /* AppDelegate.swift */,
 				F1326E5B2482659100D1B6F7 /* SceneDelegate.swift */,
 				F1326E5D2482659100D1B6F7 /* ViewController.swift */,
 				F1326E5F2482659100D1B6F7 /* Main.storyboard */,
-				F1D5CD84248592B30096A049 /* AboutRGBViewController.swift */,
 				F1326E622482659400D1B6F7 /* Assets.xcassets */,
+				F1D5CD8A2485ACE20096A049 /* Data.html */,
 				F1326E642482659400D1B6F7 /* LaunchScreen.storyboard */,
+				F1D5CD882485AC840096A049 /* BullsEye.html */,
 				F1326E672482659400D1B6F7 /* Info.plist */,
 			);
 			path = Week01Task;
@@ -129,8 +135,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1326E662482659400D1B6F7 /* LaunchScreen.storyboard in Resources */,
+				F1D5CD892485AC840096A049 /* BullsEye.html in Resources */,
 				F1326E632482659400D1B6F7 /* Assets.xcassets in Resources */,
 				F1326E612482659100D1B6F7 /* Main.storyboard in Resources */,
+				F1D5CD8B2485ACE20096A049 /* Data.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1D5CD85248592B30096A049 /* AboutRGBViewController.swift in Sources */,
 				F1326E5E2482659100D1B6F7 /* ViewController.swift in Sources */,
 				F1326E5A2482659100D1B6F7 /* AppDelegate.swift in Sources */,
+				F1D5CD872485A8760096A049 /* AboutViewController.swift in Sources */,
 				F1326E5C2482659100D1B6F7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
