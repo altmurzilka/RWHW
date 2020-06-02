@@ -7,38 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Splash View Controller-->
-        <scene sceneID="0Uo-ia-4ka">
-            <objects>
-                <viewController id="HOy-Pp-zab" customClass="SplashViewController" customModule="Week01" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hNb-S7-oOD">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="x0g-O0-yw6">
-                                <rect key="frame" x="435" y="139" width="124" height="132"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="WIf-1T-Vbg">
-                                <rect key="frame" x="192" y="159" width="512" height="512"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="mS4-gK-Uwm" firstAttribute="bottom" secondItem="WIf-1T-Vbg" secondAttribute="bottom" constant="342" id="Igq-lX-OX8"/>
-                            <constraint firstItem="WIf-1T-Vbg" firstAttribute="top" secondItem="mS4-gK-Uwm" secondAttribute="top" constant="159" id="a9M-0n-9bT"/>
-                            <constraint firstItem="WIf-1T-Vbg" firstAttribute="centerX" secondItem="hNb-S7-oOD" secondAttribute="centerX" id="uNf-db-dmp"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="mS4-gK-Uwm"/>
-                    </view>
-                    <connections>
-                        <outlet property="indicator" destination="x0g-O0-yw6" id="lc9-pj-pya"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6ID-6k-NJA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-769.41964285714278" y="98.550724637681171"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -47,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-3H-HcA">
-                                <rect key="frame" x="60" y="84" width="411" height="358"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-3H-HcA">
+                                <rect key="frame" x="224" y="28" width="411" height="358"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb1-t2-8Xw">
                                         <rect key="frame" x="39" y="57" width="39" height="21"/>
@@ -205,13 +173,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="358" id="jTu-Jb-qcb"/>
+                                    <constraint firstAttribute="width" secondItem="b3Q-3H-HcA" secondAttribute="height" multiplier="411:358" id="C3S-1q-oA8"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="b3Q-3H-HcA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gtw-Hw-QuG"/>
+                            <constraint firstItem="b3Q-3H-HcA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="3c7-WB-SH3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -275,7 +243,4 @@
             <point key="canvasLocation" x="627.45535714285711" y="98.550724637681171"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="appLogo" width="512" height="512"/>
-    </resources>
 </document>
