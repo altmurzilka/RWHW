@@ -28,6 +28,7 @@ struct About: View {
                     self.showAbout = false
                 }) {
                     Text("OK").bold()
+                        .accentColor(Color.green)
                 })
         }
     }
