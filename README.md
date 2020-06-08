@@ -1,5 +1,5 @@
 * Altyn
 * Dscrd - Altyn
-* Almaty, Kazakhstan
-* mostly SQL & some python
-* food
+* from Almaty, Kazakhstan
+* mostly python/Django, nothing serious, study projects only
+* Interests: food, anime, climbing
