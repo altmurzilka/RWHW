@@ -1,5 +1,9 @@
 * Altyn
 * Dscrd - Altyn
-* Almaty, Kazakhstan
-* mostly SQL & some python
-* food
+* from Almaty, Kazakhstan
+* mostly python / Django 
+* Interests: food, anime, climbing
+TOP 3 things I hate most:
+* myself
+* myself, when I'm drunk
+* autolayout
