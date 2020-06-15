@@ -19,32 +19,40 @@ struct ContentView: View {
                 Text("CryptoCurrencies").fontWeight(.bold)
                 
                 
+                //                HStack {
+                //                    ForEach(datas.json) { item in
+                //                        Text(item.name).foregroundColor(Color.primary)
+                //                    }
+                //                }
+                
+                
+                Text(setView1Data())
+                    .foregroundColor(Color.primary)
+                    .padding(.vertical, 40)
+                    .padding(.horizontal, 10)
+                    .background(Color.gray)
+                
+                Text(setView2Data())
+                    .foregroundColor(Color.primary)
+                    .padding(.vertical, 40)
+                    .padding(.horizontal, 95)
+                    .background(Color.gray)
+                
+                Text(setView3Data())
+                    .foregroundColor(Color.primary)
+                    .padding(.vertical, 40)
+                    .padding(.horizontal, 105)
+                    .background(Color.gray)
+                
+                
                 HStack {
-                    ForEach(datas.json) { item in
-                        Text(item.name).foregroundColor(Color.primary)
-                    }
-//                    .padding(.horizontal, 110)
-//                    .padding(50)
-//                    .background(Color.gray)
-                    //                    Text("")
-                    //
+                    Text("")
+                    Spacer()
+                    Text("")
                 }
                 
-                
-                Text("Olol")
-                    .foregroundColor(Color.primary)
-                    .padding(.horizontal, 110)
-                    .padding(50)
-                    .background(Color.gray)
-                
-                Text("Olol")
-                    .foregroundColor(Color.primary)
-                    .padding(.horizontal, 110)
-                    .padding(50)
-                    .background(Color.gray)
-                
                 Spacer()
-            }
+            }.shadow(radius: 1)
                 
             .navigationBarItems(trailing:
                 HStack {

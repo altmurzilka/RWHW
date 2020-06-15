@@ -9,16 +9,20 @@
 import Foundation
 
 struct CryptoCurrency: Codable, Identifiable {
-    enum CodingKeys: CodingKey {
-        case name
-        case symbol
-        case currentValue
-        case previousValue
-    }
-    
     let id  = UUID()
     let name: String
     let symbol: String
     let currentValue: Double
     let previousValue: Double
+}
+
+enum FilterLogic: String {
+  case increased
+  case decreased
+  case allAssets
+}
+
+enum Trend: Int, Codable {
+  case rising
+  case falling
 }
