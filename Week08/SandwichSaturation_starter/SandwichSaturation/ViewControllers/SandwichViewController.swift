@@ -150,13 +150,13 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
     
     func filterContentForSearchText(_ searchText: String,
                                     sauceAmount: SauceAmount? = nil) {
-        filteredSandwiches = sandwiches.filter { (sandwich: Sandwitch) -> Bool in
-            let doesSauceAmountMatch = sauceAmount == .any
+        filteredSandwiches = sandwiches.filter { (sandwhich: Sandwitch) -> Bool in
+            let doesSauceAmountMatch = sauceAmount == .any || sandwhich.sand2so.soucequantity == sauceAmount.map { $0.rawValue }
             
             if isSearchBarEmpty {
                 return doesSauceAmountMatch
             } else {
-                return doesSauceAmountMatch && sandwich.name!.lowercased()
+                return doesSauceAmountMatch && sandwhich.name.lowercased()
                     .contains(searchText.lowercased())
             }
         }
@@ -188,9 +188,9 @@ class SandwichViewController: UITableViewController, SandwichDataSource {
             filteredSandwiches[indexPath.row] :
             sandwiches[indexPath.row]
         
-        cell.thumbnail.image = UIImage.init(imageLiteralResourceName: sandwich.img!)
+        cell.thumbnail.image = UIImage.init(imageLiteralResourceName: sandwich.img)
         cell.nameLabel.text = sandwich.name
-        cell.sauceLabel.text = sandwich.sand2so?.soucequantity
+        cell.sauceLabel.text = sandwich.sand2so.soucequantity
         
         return cell
     }

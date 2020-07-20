@@ -17,8 +17,8 @@ extension Sandwitch {
         return NSFetchRequest<Sandwitch>(entityName: "Sandwitch")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var img: String?
-    @NSManaged public var sand2so: Souce?
+    @NSManaged public var name: String
+    @NSManaged public var img: String
+    @NSManaged public var sand2so: Souce
 
 }
