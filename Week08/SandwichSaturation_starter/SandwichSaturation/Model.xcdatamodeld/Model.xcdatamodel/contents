@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17162" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Sandwitch" representedClassName=".Sandwitch" syncable="YES">
+        <attribute name="img" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="sand2so" maxCount="1" deletionRule="Nullify" destinationEntity="Souce" inverseName="so2sand" inverseEntity="Souce"/>
+    </entity>
+    <entity name="Souce" representedClassName=".Souce" syncable="YES">
+        <attribute name="soucequantity" optional="YES" attributeType="String"/>
+        <relationship name="so2sand" toMany="YES" deletionRule="Nullify" destinationEntity="Sandwitch" inverseName="sand2so" inverseEntity="Sandwitch"/>
+    </entity>
+    <elements>
+        <element name="Sandwitch" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="Souce" positionX="-54" positionY="-9" width="128" height="28"/>
+    </elements>
+</model>
