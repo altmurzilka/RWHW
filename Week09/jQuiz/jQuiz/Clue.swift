@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct datatype: Identifiable {
+    var id : String
+    var question : String
+    var answer: String
+}
+
 struct Clue : Decodable {
     var id : Int
     var answer : String
