@@ -32,49 +32,77 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack(spacing: 150) {
+        ZStack {
+            // Banner Content Here
             
-            Rectangle()
-                .fill(self.randColor)
-                .frame(width: 150+self.scale, height: 150+self.scale)
-                .rotationEffect(.degrees(angle))
-                .animation(.spring())
-            
-            ZStack {
+            VStack {
+                HStack {
+                    // Banner Content Here
+                    HStack(alignment: .center, spacing: 10) {
+                        Image(systemName: "checkmark")
+                            .frame(width: 30, height: 30)
+                            .background(Color.green)
+                            .clipShape(Circle())
+                            .foregroundColor(Color.white)
+                        Text("Animation added successfully")
+                            .font(Font.system(size: 18, weight: Font.Weight.light, design: Font.Design.default))
+                    }.padding()
+                    Spacer()
+                }.foregroundColor(Color.black)
+                .padding(8)
+                .background(Color(red: 211/255, green: 211/255, blue: 211/255))
+                .cornerRadius(8)
+                .padding()
                 
-                // color
-                Image(systemName: "paintbrush.pointed")
-                    .imageStyle()
-                    .offset(x: showDetails ? -70 : 0)
-                    .onTapGesture {
-                        self.newColor()
-                    }
+                Spacer()
+            }
+
+            VStack(spacing: 150) {
                 
-                // size
-                Image(systemName: "scribble.variable" )
-                    .imageStyle()
-                    .offset(y: showDetails ? -70 : 0)
-                    .onTapGesture {
-                        self.scale += CGFloat(Double.random(in: 1...3))
-                    }
+                Rectangle()
+                    .fill(self.randColor)
+                    .frame(width: 150+self.scale, height: 150+self.scale)
+                    .rotationEffect(.degrees(angle))
+                    .animation(.spring())
                 
-                // angle
-                Image(systemName: "point.topleft.down.curvedto.point.bottomright.up")
-                    .imageStyle()
-                    .offset(x: showDetails ? 70 : 0)
-                    .onTapGesture {
-                        self.angle += Double.random(in: 15...270)
-                    }
-                
-                // play
-                Image(systemName: "play")
-                    .imageStyle()
-                    .animation(.default)
-                    .onTapGesture {
-                        self.showDetails.toggle()
-                    }
-            }.animation(.easeInOut)
+                ZStack {
+                    
+                    // color
+                    Image(systemName: "paintbrush.pointed")
+                        .imageStyle()
+                        .offset(x: showDetails ? -70 : 0)
+                        .onTapGesture {
+                            self.newColor()
+                        }
+                    
+                    // size
+                    Image(systemName: "scribble.variable" )
+                        .imageStyle()
+                        .offset(y: showDetails ? -70 : 0)
+                        .onTapGesture {
+                            self.scale += CGFloat(Double.random(in: 1...3))
+                        }
+                    
+                    // angle
+                    Image(systemName: "point.topleft.down.curvedto.point.bottomright.up")
+                        .imageStyle()
+                        .offset(x: showDetails ? 70 : 0)
+                        .onTapGesture {
+                            self.angle += Double.random(in: 15...270)
+                        }
+                    
+                    // play
+                    Image(systemName: "play")
+                        .imageStyle()
+                        .animation(.default)
+                        .onTapGesture {
+                            self.showDetails.toggle()
+                        }
+                }.animation(.easeInOut)
+            }
         }
+        
+        
     }
     
     func newColor() {
