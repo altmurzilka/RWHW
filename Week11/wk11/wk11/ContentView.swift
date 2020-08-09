@@ -16,11 +16,11 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack(spacing: 50) {
+        VStack(spacing: 160) {
             
             Rectangle()
                 .fill(self.randColor)
-                .frame(width: 150, height: 150)
+                .frame(width: 150+self.scale, height: 150+self.scale)
                 .rotationEffect(.degrees(angle))
                 .animation(.spring())
             
@@ -40,32 +40,30 @@ struct ContentView: View {
                     
                     ZStack {
                         
-                        HStack {
-                            Button(action: {
-                                self.newColor()
-                            }) {
-                                // color
-                                Image(systemName: "paintbrush.pointed")
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(Color.black)
-                                    .background(Color.red)
-                                    .offset(x: showDetails ? -60 : 0)
-                                    .clipShape(Circle())
-                            }
-                            
-                            
-                            Button(action: {
-                                
-                            }) {
-                                
-                                Image(systemName: "scribble.variable" )
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(Color.black)
-                                    .background(Color.red)
-                                    .clipShape(Circle())
-                            }.padding(.leading, 50)
-                        }
                         
+                        Button(action: {
+                            self.newColor()
+                        }) {
+                            // color
+                            Image(systemName: "paintbrush.pointed")
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(Color.black)
+                                .background(Color.red)
+                                .clipShape(Circle())
+                        }.offset(x: showDetails ? -70 : 0)
+                        .animation(.easeOut)
+                        
+                        
+                        Button(action: {
+                            self.scale += CGFloat(Double.random(in: 1...3))
+                        }) {
+                            
+                            Image(systemName: "scribble.variable" )
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(Color.black)
+                                .background(Color.red)
+                                .clipShape(Circle())
+                        }.offset(x: showDetails ? 70 : 0)
                         
                         Button(action: {
                             self.angle += Double.random(in: 15...270)
@@ -76,19 +74,11 @@ struct ContentView: View {
                                 .foregroundColor(Color.black)
                                 .background(Color.red)
                                 .clipShape(Circle())
-                        }.padding(.bottom, 150)
+                        }.offset(y: showDetails ? -70 : 0)
                         
-                        
-                        Button(action: {
-                                    self.scale += 1
-                                }) {
-                                    Text("Tap here")
-                                        .scaleEffect(scale)
-                                        .animation(.linear)
-                                }.padding(.top, 150)
                     }
                 }
-            }
+            }//.animation(.easeOut)
         }
     }
     
