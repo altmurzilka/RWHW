@@ -7,22 +7,16 @@
 
 import Foundation
 
-struct datatype: Identifiable {
-    var id : String
-    var question : String
-    var answer: String
-}
-
-struct Clue : Decodable {
+struct Clue : Decodable, Identifiable {
     var id : Int
     var answer : String
     var question : String
     var value : Int
-    var cat : Category
+   // var cat : Category
 }
 
-struct Category : Decodable {
-    var id : Int
-    var title : String
-    var clues_count : Int
-}
+//struct Category : Decodable {
+//    var id : Int
+//    var title : String
+//    var clues_count : Int
+//}
