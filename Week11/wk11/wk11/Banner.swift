@@ -22,11 +22,11 @@ struct BannerModifier: ViewModifier {
         var bannerMessage: String {
             switch self {
             case .Color:
-                return "Yay! Color has changed!"
+                return "Yay! New Color!"
             case .Rotation:
-                return "Wow! Rotation appeared!"
+                return "Wow! Offsest appeared!"
             case .Size:
-                return "Nice! Figure getting bigger!"
+                return "Nice! Petal width changed!"
             }
         }
     }

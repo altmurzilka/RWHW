@@ -26,7 +26,7 @@ extension View {
 struct ContentView: View {
     
     @State private var showDetails = false
-    @State private var randColor = Color.black
+    @State private var randColor = Color.green
     @State private var angle: Double = 0
     @State private var scale: CGFloat = 1
     
@@ -37,17 +37,25 @@ struct ContentView: View {
     @State var applyRotation: Bool = false
     @State var applySize: Bool = false
     
+    // flower shape related
+    @State private var petalOffset = -20.0
+    @State private var petalWidth = 100.0
+    
     var body: some View {
         
         ZStack {
             
-            VStack(spacing: 150) {
+            VStack(spacing: 70) {
                 
-                Rectangle()
-                    .fill(self.randColor)
-                    .frame(width: 150+self.scale, height: 150+self.scale)
-                    .rotationEffect(.degrees(angle))
-                    .animation(.spring())
+                Flower(petalOffset: petalOffset, petalWidth: petalWidth)
+                    .fill(self.randColor, style: FillStyle(eoFill: true))
+                    .padding(30)
+                
+                //                Rectangle()
+                //                    .fill(self.randColor)
+                //                    .frame(width: 150+self.scale, height: 150+self.scale)
+                //                    .rotationEffect(.degrees(angle))
+                //                    .animation(.spring())
                 
                 ZStack {
                     
@@ -61,8 +69,8 @@ struct ContentView: View {
                             self.applyColor = true
                         }
                     
-                    // size
-                    Image(systemName: "scribble.variable" )
+                    // size || width
+                    Image(systemName: "arrow.left.and.right.righttriangle.left.righttriangle.right" )
                         .imageStyle()
                         .offset(y: showDetails ? -70 : 0)
                         .onTapGesture {
@@ -71,8 +79,8 @@ struct ContentView: View {
                             self.applySize = true
                         }
                     
-                    // rotation
-                    Image(systemName: "point.topleft.down.curvedto.point.bottomright.up")
+                    // rotation || offset
+                    Image(systemName: "arrowtriangle.left.and.line.vertical.and.arrowtriangle.right")
                         .imageStyle()
                         .offset(x: showDetails ? 70 : 0)
                         .onTapGesture {
@@ -89,9 +97,13 @@ struct ContentView: View {
                             self.showDetails.toggle()
                             if !showDetails {
                                 self.applyChanges()
+                                self.applyColor = false
+                                self.applySize = false
+                                self.applyRotation = false
                             }
                         }
                 }.animation(.easeInOut)
+                .padding(.bottom, 50)
             }.banner(data: $bannerData, show: $showBanner)
         }
         
@@ -115,10 +127,12 @@ struct ContentView: View {
             self.newColor()
         }
         if applySize {
-            self.scale += CGFloat(Double.random(in: 2...5))
+            // self.scale += CGFloat(Double.random(in: 2...5))
+            self.petalWidth = Double.random(in: 1...100)
         }
         if applyRotation {
-            self.angle += Double.random(in: 15...270)
+            // self.angle += Double.random(in: 15...270)
+            self.petalOffset = Double.random(in: -40...40)
         }
     }
     
@@ -127,5 +141,42 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+
+// code for flower from https://www.hackingwithswift.com/books/ios-swiftui/transforming-shapes-using-cgaffinetransform-and-even-odd-fills
+
+struct Flower: Shape {
+    // How much to move this petal away from the center
+    var petalOffset: Double = -20
+    
+    // How wide to make each petal
+    var petalWidth: Double = 100
+    
+    func path(in rect: CGRect) -> Path {
+        // The path that will hold all petals
+        var path = Path()
+        
+        // Count from 0 up to pi * 2, moving up pi / 8 each time
+        for number in stride(from: 0, to: CGFloat.pi * 2, by: CGFloat.pi / 8) {
+            // rotate the petal by the current value of our loop
+            let rotation = CGAffineTransform(rotationAngle: number)
+            
+            // move the petal to be at the center of our view
+            let position = rotation.concatenating(CGAffineTransform(translationX: rect.width / 2, y: rect.height / 2))
+            
+            // create a path for this petal using our properties plus a fixed Y and height
+            let originalPetal = Path(ellipseIn: CGRect(x: CGFloat(petalOffset), y: 0, width: CGFloat(petalWidth), height: rect.width / 2))
+            
+            // apply our rotation/position transformation to the petal
+            let rotatedPetal = originalPetal.applying(position)
+            
+            // add it to our main path
+            path.addPath(rotatedPetal)
+        }
+        
+        // now send the main path back
+        return path
     }
 }
