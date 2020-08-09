@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State private var showDetails = false
     @State private var randColor = Color.black
     @State private var angle: Double = 0
-    
     @State private var scale: CGFloat = 1
     
     var body: some View {
         
-        VStack(spacing: 160) {
+        VStack(spacing: 150) {
             
             Rectangle()
                 .fill(self.randColor)
@@ -25,60 +25,51 @@ struct ContentView: View {
                 .animation(.spring())
             
             ZStack {
-                Button(action: {
-                    self.showDetails.toggle()
-                }) {
-                    Image(systemName: "play")
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.black)
-                        .background(Color.red)
-                        .clipShape(Circle())
-                        .animation(.default)
-                }
                 
-                if showDetails {
-                    
-                    ZStack {
-                        
-                        
-                        Button(action: {
-                            self.newColor()
-                        }) {
-                            // color
-                            Image(systemName: "paintbrush.pointed")
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(Color.black)
-                                .background(Color.red)
-                                .clipShape(Circle())
-                        }.offset(x: showDetails ? -70 : 0)
-                        .animation(.easeOut)
-                        
-                        
-                        Button(action: {
-                            self.scale += CGFloat(Double.random(in: 1...3))
-                        }) {
-                            
-                            Image(systemName: "scribble.variable" )
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(Color.black)
-                                .background(Color.red)
-                                .clipShape(Circle())
-                        }.offset(x: showDetails ? 70 : 0)
-                        
-                        Button(action: {
-                            self.angle += Double.random(in: 15...270)
-                        }) {
-                            // angle
-                            Image(systemName: "point.topleft.down.curvedto.point.bottomright.up")
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(Color.black)
-                                .background(Color.red)
-                                .clipShape(Circle())
-                        }.offset(y: showDetails ? -70 : 0)
-                        
+                // color
+                Image(systemName: "paintbrush.pointed")
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(Color.black)
+                    .background(Color.red)
+                    .clipShape(Circle())
+                    .offset(x: showDetails ? -70 : 0)
+                    .onTapGesture {
+                        self.newColor()
                     }
-                }
-            }//.animation(.easeOut)
+                
+                // size
+                Image(systemName: "scribble.variable" )
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(Color.black)
+                    .background(Color.red)
+                    .clipShape(Circle())
+                    .offset(y: showDetails ? -70 : 0)
+                    .onTapGesture {
+                        self.scale += CGFloat(Double.random(in: 1...3))
+                    }
+                
+                // angle
+                Image(systemName: "point.topleft.down.curvedto.point.bottomright.up")
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(Color.black)
+                    .background(Color.red)
+                    .clipShape(Circle())
+                    .offset(x: showDetails ? 70 : 0)
+                    .onTapGesture {
+                        self.angle += Double.random(in: 15...270)
+                    }
+                
+                // play
+                Image(systemName: "play")
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(Color.black)
+                    .background(Color.red)
+                    .clipShape(Circle())
+                    .animation(.default)
+                    .onTapGesture {
+                        self.showDetails.toggle()
+                    }
+            }.animation(.easeInOut)
         }
     }
     
