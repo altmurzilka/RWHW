@@ -1,7 +1,14 @@
-![avatar](ltn.jpg)
+<img src="/ltn.jpg"  width="200">
+
 **Name:** Altynshash Myrzakulova
+
 **Discord:** Altyn#2690
+
 **Location:** Almaty, Kazakhstan
-**Programming Experience:** mostly python/Django. Former FICO developer.
-**Interests:** food, manga, drawing, SwiftUI, hiking, sleeping.
-**Framework I hate most:** UIKit
+
+**Programming Experience:** about a year with python/Django. Former FICO developer.
+
+**Goals:** become an iOS developer, adopt a dog, eat tasty food, stop procrastinating
+
+**Hobbies / Interests:** food, manga, drawing, collecting anime figures, SwiftUI, hiking, sleeping.
+
