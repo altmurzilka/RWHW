@@ -11,8 +11,8 @@ struct Img: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(width: 50, height: 50)
-            .foregroundColor(Color.black)
-            .background(Color.red)
+            .foregroundColor(Color.white)
+            .background(Color.green)
             .clipShape(Circle())
     }
 }
@@ -30,33 +30,13 @@ struct ContentView: View {
     @State private var angle: Double = 0
     @State private var scale: CGFloat = 1
     
+    @State var showBanner: Bool = false
+    @State var bannerData: BannerModifier.BannerData = BannerModifier.BannerData(detail: "Example notification.", type: .Color)
+    
     var body: some View {
         
         ZStack {
-            // Banner Content Here
             
-            VStack {
-                HStack {
-                    // Banner Content Here
-                    HStack(alignment: .center, spacing: 10) {
-                        Image(systemName: "checkmark")
-                            .frame(width: 30, height: 30)
-                            .background(Color.green)
-                            .clipShape(Circle())
-                            .foregroundColor(Color.white)
-                        Text("Animation added successfully")
-                            .font(Font.system(size: 18, weight: Font.Weight.light, design: Font.Design.default))
-                    }.padding()
-                    Spacer()
-                }.foregroundColor(Color.black)
-                .padding(8)
-                .background(Color(red: 211/255, green: 211/255, blue: 211/255))
-                .cornerRadius(8)
-                .padding()
-                
-                Spacer()
-            }
-
             VStack(spacing: 150) {
                 
                 Rectangle()
@@ -73,6 +53,8 @@ struct ContentView: View {
                         .offset(x: showDetails ? -70 : 0)
                         .onTapGesture {
                             self.newColor()
+                            self.bannerData.type = .Color
+                            self.showBanner = true
                         }
                     
                     // size
@@ -81,14 +63,18 @@ struct ContentView: View {
                         .offset(y: showDetails ? -70 : 0)
                         .onTapGesture {
                             self.scale += CGFloat(Double.random(in: 1...3))
+                            self.bannerData.type = .Size
+                            self.showBanner = true
                         }
                     
-                    // angle
+                    // rotation
                     Image(systemName: "point.topleft.down.curvedto.point.bottomright.up")
                         .imageStyle()
                         .offset(x: showDetails ? 70 : 0)
                         .onTapGesture {
                             self.angle += Double.random(in: 15...270)
+                            self.bannerData.type = .Rotation
+                            self.showBanner = true
                         }
                     
                     // play
@@ -99,7 +85,7 @@ struct ContentView: View {
                             self.showDetails.toggle()
                         }
                 }.animation(.easeInOut)
-            }
+            }.banner(data: $bannerData, show: $showBanner)
         }
         
         
@@ -115,6 +101,7 @@ struct ContentView: View {
         
         self.randColor = randColor
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

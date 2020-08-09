@@ -13,6 +13,7 @@
 		F13C034324DE9EFA00545CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F13C034224DE9EFA00545CB8 /* Assets.xcassets */; };
 		F13C034624DE9EFA00545CB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F13C034524DE9EFA00545CB8 /* Preview Assets.xcassets */; };
 		F13C034924DE9EFA00545CB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F13C034724DE9EFA00545CB8 /* LaunchScreen.storyboard */; };
+		F13C037124E005A800545CB8 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C037024E005A800545CB8 /* Banner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F13C034524DE9EFA00545CB8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F13C034824DE9EFA00545CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F13C034A24DE9EFA00545CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F13C037024E005A800545CB8 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F13C033C24DE9EF900545CB8 /* AppDelegate.swift */,
 				F13C033E24DE9EF900545CB8 /* SceneDelegate.swift */,
 				F13C034024DE9EF900545CB8 /* ContentView.swift */,
+				F13C037024E005A800545CB8 /* Banner.swift */,
 				F13C034224DE9EFA00545CB8 /* Assets.xcassets */,
 				F13C034724DE9EFA00545CB8 /* LaunchScreen.storyboard */,
 				F13C034A24DE9EFA00545CB8 /* Info.plist */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F13C033D24DE9EF900545CB8 /* AppDelegate.swift in Sources */,
+				F13C037124E005A800545CB8 /* Banner.swift in Sources */,
 				F13C033F24DE9EF900545CB8 /* SceneDelegate.swift in Sources */,
 				F13C034124DE9EF900545CB8 /* ContentView.swift in Sources */,
 			);
