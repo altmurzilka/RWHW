@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+struct Img: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 50, height: 50)
+            .foregroundColor(Color.black)
+            .background(Color.red)
+            .clipShape(Circle())
+    }
+}
+
+extension View {
+    func imageStyle() -> some View {
+        self.modifier(Img())
+    }
+}
+
 struct ContentView: View {
     
     @State private var showDetails = false
@@ -28,10 +44,7 @@ struct ContentView: View {
                 
                 // color
                 Image(systemName: "paintbrush.pointed")
-                    .frame(width: 50, height: 50)
-                    .foregroundColor(Color.black)
-                    .background(Color.red)
-                    .clipShape(Circle())
+                    .imageStyle()
                     .offset(x: showDetails ? -70 : 0)
                     .onTapGesture {
                         self.newColor()
@@ -39,10 +52,7 @@ struct ContentView: View {
                 
                 // size
                 Image(systemName: "scribble.variable" )
-                    .frame(width: 50, height: 50)
-                    .foregroundColor(Color.black)
-                    .background(Color.red)
-                    .clipShape(Circle())
+                    .imageStyle()
                     .offset(y: showDetails ? -70 : 0)
                     .onTapGesture {
                         self.scale += CGFloat(Double.random(in: 1...3))
@@ -50,10 +60,7 @@ struct ContentView: View {
                 
                 // angle
                 Image(systemName: "point.topleft.down.curvedto.point.bottomright.up")
-                    .frame(width: 50, height: 50)
-                    .foregroundColor(Color.black)
-                    .background(Color.red)
-                    .clipShape(Circle())
+                    .imageStyle()
                     .offset(x: showDetails ? 70 : 0)
                     .onTapGesture {
                         self.angle += Double.random(in: 15...270)
@@ -61,10 +68,7 @@ struct ContentView: View {
                 
                 // play
                 Image(systemName: "play")
-                    .frame(width: 50, height: 50)
-                    .foregroundColor(Color.black)
-                    .background(Color.red)
-                    .clipShape(Circle())
+                    .imageStyle()
                     .animation(.default)
                     .onTapGesture {
                         self.showDetails.toggle()
