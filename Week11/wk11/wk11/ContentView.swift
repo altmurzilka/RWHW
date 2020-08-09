@@ -33,6 +33,10 @@ struct ContentView: View {
     @State var showBanner: Bool = false
     @State var bannerData: BannerModifier.BannerData = BannerModifier.BannerData(detail: "Example notification.", type: .Color)
     
+    @State var applyColor: Bool = false
+    @State var applyRotation: Bool = false
+    @State var applySize: Bool = false
+    
     var body: some View {
         
         ZStack {
@@ -52,9 +56,9 @@ struct ContentView: View {
                         .imageStyle()
                         .offset(x: showDetails ? -70 : 0)
                         .onTapGesture {
-                            self.newColor()
                             self.bannerData.type = .Color
                             self.showBanner = true
+                            self.applyColor = true
                         }
                     
                     // size
@@ -62,9 +66,9 @@ struct ContentView: View {
                         .imageStyle()
                         .offset(y: showDetails ? -70 : 0)
                         .onTapGesture {
-                            self.scale += CGFloat(Double.random(in: 1...3))
                             self.bannerData.type = .Size
                             self.showBanner = true
+                            self.applySize = true
                         }
                     
                     // rotation
@@ -72,9 +76,9 @@ struct ContentView: View {
                         .imageStyle()
                         .offset(x: showDetails ? 70 : 0)
                         .onTapGesture {
-                            self.angle += Double.random(in: 15...270)
                             self.bannerData.type = .Rotation
                             self.showBanner = true
+                            self.applyRotation = true
                         }
                     
                     // play
@@ -83,6 +87,9 @@ struct ContentView: View {
                         .animation(.default)
                         .onTapGesture {
                             self.showDetails.toggle()
+                            if !showDetails {
+                                self.applyChanges()
+                            }
                         }
                 }.animation(.easeInOut)
             }.banner(data: $bannerData, show: $showBanner)
@@ -100,6 +107,19 @@ struct ContentView: View {
         let randColor = Color(red: rand1/255, green: rand2/255, blue: rand3/255)
         
         self.randColor = randColor
+    }
+    
+    func applyChanges() {
+        
+        if applyColor {
+            self.newColor()
+        }
+        if applySize {
+            self.scale += CGFloat(Double.random(in: 2...5))
+        }
+        if applyRotation {
+            self.angle += Double.random(in: 15...270)
+        }
     }
     
 }
