@@ -24,6 +24,8 @@ extension View {
 }
 
 struct ContentView: View {
+    // banner bug fix
+    @Environment(\.presentationMode) var presentation
     
     @State private var showDetails = false
     @State private var randColor = Color.green
